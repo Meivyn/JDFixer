@@ -21,17 +21,17 @@ namespace JDFixer.UI
 
         public void Initialize()
         {
-            GameplaySetup.instance.AddTab("JDFixer-TA/MP", "JDFixer.UI.BSML.customOnlineUI.bsml", this, MenuType.Custom | MenuType.Online);
+            GameplaySetup.Instance.AddTab("JDFixer-TA/MP", "JDFixer.UI.BSML.customOnlineUI.bsml", this, MenuType.Custom | MenuType.Online);
             Donate.Refresh_Text();
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Donate_Update_Dynamic)));
         }
 
         public void Dispose()
         {
-            if (GameplaySetup.instance != null)
+            if (GameplaySetup.Instance != null)
             {
                 PluginConfig.Instance.Changed();
-                GameplaySetup.instance.RemoveTab("JDFixer-TA/MP");
+                GameplaySetup.Instance.RemoveTab("JDFixer-TA/MP");
             }
         }
 
@@ -317,8 +317,8 @@ namespace JDFixer.UI
                 return;
             }
 
-            jd_slider_text = JD_Slider.slider.GetComponentInChildren<CurvedTextMeshPro>();
-            rt_slider_text = RT_Slider.slider.GetComponentInChildren<CurvedTextMeshPro>();
+            jd_slider_text = JD_Slider.Slider.GetComponentInChildren<CurvedTextMeshPro>();
+            rt_slider_text = RT_Slider.Slider.GetComponentInChildren<CurvedTextMeshPro>();
 
             if (jd_slider_text != null && rt_slider_text != null)
             {

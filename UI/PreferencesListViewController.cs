@@ -98,7 +98,7 @@ namespace JDFixer.UI
 
         private void Reload_List_From_Config()
         {
-            Pref_List.data.Clear();
+            Pref_List.Data.Clear();
 
             if (PluginConfig.Instance.preferredValues == null)
             {
@@ -109,11 +109,11 @@ namespace JDFixer.UI
 
             foreach (var pref in PluginConfig.Instance.preferredValues)
             {
-                Pref_List.data.Add(new CustomListTableData.CustomCellInfo($"{pref.njs} NJS | {pref.jumpDistance} Jump Distance"));
+                Pref_List.Data.Add(new CustomListTableData.CustomCellInfo($"{pref.njs} NJS | {pref.jumpDistance} Jump Distance"));
             }
 
-            Pref_List.tableView.ReloadData();
-            Pref_List.tableView.ClearSelection();
+            Pref_List.TableView.ReloadData();
+            Pref_List.TableView.ClearSelection();
             Selected_Pref = null;
         }
 

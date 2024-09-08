@@ -23,17 +23,17 @@ namespace JDFixer.UI
 
         public void Initialize()
         {
-            GameplaySetup.instance.AddTab("JDFixer", "JDFixer.UI.BSML.legacyModifierUI.bsml", this, MenuType.Solo | MenuType.Campaign);
+            GameplaySetup.Instance.AddTab("JDFixer", "JDFixer.UI.BSML.legacyModifierUI.bsml", this, MenuType.Solo | MenuType.Campaign);
             Donate.Refresh_Text();
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Donate_Update_Dynamic)));
         }
 
         public void Dispose()
         {
-            if (GameplaySetup.instance != null)
+            if (GameplaySetup.Instance != null)
             {
                 PluginConfig.Instance.Changed();
-                GameplaySetup.instance.RemoveTab("JDFixer");
+                GameplaySetup.Instance.RemoveTab("JDFixer");
             }
         }
 
@@ -400,13 +400,13 @@ namespace JDFixer.UI
                 return;
             }
 
-            jd_slider_text = JD_Slider.slider.GetComponentInChildren<CurvedTextMeshPro>();
+            jd_slider_text = JD_Slider.Slider.GetComponentInChildren<CurvedTextMeshPro>();
             if (jd_slider_text != null)
             {
                 jd_slider_text.color = new UnityEngine.Color(1f, 1f, 0f);
             }
 
-            rt_slider_text = RT_Slider.slider.GetComponentInChildren<CurvedTextMeshPro>();
+            rt_slider_text = RT_Slider.Slider.GetComponentInChildren<CurvedTextMeshPro>();
             if (rt_slider_text != null)
             {
                 rt_slider_text.color = new UnityEngine.Color(204f / 255f, 153f / 255f, 1f);

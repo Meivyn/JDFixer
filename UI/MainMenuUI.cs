@@ -14,14 +14,14 @@ namespace JDFixer.UI
 
         public void Initialize()
         {
-            BeatSaberMarkupLanguage.Settings.BSMLSettings.instance.AddSettingsMenu("JDFixer", "JDFixer.UI.BSML.mainMenuUI.bsml", this);
+            BeatSaberMarkupLanguage.Settings.BSMLSettings.Instance.AddSettingsMenu("JDFixer", "JDFixer.UI.BSML.mainMenuUI.bsml", this);
         }
 
         public void Dispose()
         {
-            if (BeatSaberMarkupLanguage.Settings.BSMLSettings.instance != null)
+            if (BeatSaberMarkupLanguage.Settings.BSMLSettings.Instance != null)
             {
-                BeatSaberMarkupLanguage.Settings.BSMLSettings.instance.RemoveSettingsMenu(this);
+                BeatSaberMarkupLanguage.Settings.BSMLSettings.Instance.RemoveSettingsMenu(this);
             }
         }
 
