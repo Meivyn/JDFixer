@@ -23,17 +23,17 @@ namespace JDFixer.UI
 
         public void Initialize()
         {
-            GameplaySetup.instance.AddTab("JDFixer", "JDFixer.UI.BSML.modifierUI.bsml", this, MenuType.Solo | MenuType.Campaign);
+            GameplaySetup.Instance.AddTab("JDFixer", "JDFixer.UI.BSML.modifierUI.bsml", this, MenuType.Solo | MenuType.Campaign);
             Donate.Refresh_Text();
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Donate_Update_Dynamic)));
         }
 
         public void Dispose()
         {
-            if (GameplaySetup.instance != null)
+            if (GameplaySetup.Instance != null)
             {
                 PluginConfig.Instance.Changed();
-                GameplaySetup.instance.RemoveTab("JDFixer");
+                GameplaySetup.Instance.RemoveTab("JDFixer");
             }
         }
 
@@ -460,23 +460,23 @@ namespace JDFixer.UI
                 return;
             }
 
-            jd_slider_text = JD_Slider.slider.GetComponentInChildren<CurvedTextMeshPro>();
+            jd_slider_text = JD_Slider.Slider.GetComponentInChildren<CurvedTextMeshPro>();
             if (jd_slider_text != null)
             {
                 jd_slider_text.color = new UnityEngine.Color(1f, 1f, 0f);
             }
 
-            rt_slider_text = RT_Slider.slider.GetComponentInChildren<CurvedTextMeshPro>();
+            rt_slider_text = RT_Slider.Slider.GetComponentInChildren<CurvedTextMeshPro>();
             if (rt_slider_text != null)
             {
                 rt_slider_text.color = new UnityEngine.Color(204f / 255f, 153f / 255f, 1f);
             }
 
-            rt_slider_range = RT_Slider.slider.GetComponentInChildren<HMUI.CustomFormatRangeValuesSlider>();
+            rt_slider_range = RT_Slider.Slider.GetComponentInChildren<HMUI.CustomFormatRangeValuesSlider>();
             rt_slider_range.minValue = _selectedBeatmap.MinRTSlider;
             rt_slider_range.maxValue = _selectedBeatmap.MaxRTSlider;
 
-            jd_slider_range = JD_Slider.slider.GetComponentInChildren<HMUI.CustomFormatRangeValuesSlider>();
+            jd_slider_range = JD_Slider.Slider.GetComponentInChildren<HMUI.CustomFormatRangeValuesSlider>();
             jd_slider_range.minValue = _selectedBeatmap.MinJDSlider;
             jd_slider_range.maxValue = _selectedBeatmap.MaxJDSlider;
 
@@ -522,8 +522,8 @@ namespace JDFixer.UI
         private void RefreshSliderMinMax()
         {
             Plugin.Log.Debug("Refresh Slider Min Max");
-            rt_slider_range = RT_Slider.slider.GetComponentInChildren<HMUI.CustomFormatRangeValuesSlider>();
-            jd_slider_range = JD_Slider.slider.GetComponentInChildren<HMUI.CustomFormatRangeValuesSlider>();
+            rt_slider_range = RT_Slider.Slider.GetComponentInChildren<HMUI.CustomFormatRangeValuesSlider>();
+            jd_slider_range = JD_Slider.Slider.GetComponentInChildren<HMUI.CustomFormatRangeValuesSlider>();
 
             if (PluginConfig.Instance.slider_setting == 0)
             {
